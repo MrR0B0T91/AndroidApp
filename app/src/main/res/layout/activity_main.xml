@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/logo"
+        android:layout_marginTop="50sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/user_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginHorizontal="50sp"
+        android:layout_marginTop="70sp"
+        android:backgroundTint="@color/purple_500"
+        android:ems="10"
+        android:textColor="@color/textColorHint"
+        android:textColorHint="@color/textColorHint"
+        android:hint="@string/hint_user_tilt"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/user_field_rub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_field"
+        android:layout_marginHorizontal="50sp"
+        android:layout_marginTop="10sp"
+        android:backgroundTint="@color/purple_500"
+        android:ems="10"
+        android:textColor="@color/textColorHint"
+        android:textColorHint="@color/textColorHint"
+        android:hint="@string/rub_input"
+        android:inputType="textPersonName"/>
+    
+    <Button
+        android:id="@+id/main_button"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_below="@id/user_field_rub"
+        android:layout_marginTop="20sp"
+        android:layout_marginHorizontal="130sp"
+        android:backgroundTint="@color/purple_500"
+        android:text="@string/main_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/result_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_button"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginTop="50sp"
+        android:textAlignment="center"
+        android:textColor="@color/textColorHint"
+        android:textSize="25sp" />
+</RelativeLayout>

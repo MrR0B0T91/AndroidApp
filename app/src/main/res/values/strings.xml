@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Currency App</string>
+    <string name="logo">Курсы валют</string>
+    <string name="hint_user_tilt">Введите валюту</string>
+    <string name="main_btn">Рассчитать курс</string>
+    <string name="no_user_input">Введите текст</string>
+    <string name="rub_input">Введите сумму в рублях</string>
+
+
+</resources>
