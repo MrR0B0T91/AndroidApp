@@ -10,7 +10,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.mrrobot.currencyapp.adapter.CurrencyAdapter;
+import com.mrrobot.currencyapp.model.Currency;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,7 +25,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText userFieldRub;
     private Button mainButton;
     private TextView resultInfo;
+
+    private RecyclerView recyclerView;
+    private CurrencyAdapter currencyAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +63,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        List<Currency> currencies = new ArrayList<>();
+
+        currencies.add(new Currency("R01010", "036", "AUD", 1, "Австралийский доллар", 62.4844, 57.9663));
+        currencies.add(new Currency("R01010", "036", "AUD", 1, "Канадский доллар", 32.4844, 27.9663));
+        currencies.add(new Currency("R01010", "036", "AUD", 1, "Африканский доллар", 14.48, 15.96));
+        currencies.add(new Currency("R01010", "036", "AUD", 1, "Австралийский доллар", 62.4844, 57.9663));
+        currencies.add(new Currency("R01010", "036", "AUD", 1, "Австралийский доллар", 62.4844, 57.9663));
+
+        setCurrencyRecycler(currencies);
+
     }
 
-    private class GetUrlData extends AsyncTask<String,String,String>{
+    private void setCurrencyRecycler(List<Currency> currencies) {
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+
+        recyclerView = findViewById(R.id.currency_recycler);
+        recyclerView.setLayoutManager(layoutManager);
+
+        currencyAdapter = new CurrencyAdapter(this, currencies);
+        recyclerView.setAdapter(currencyAdapter);
+    }
+
+    private class GetUrlData extends AsyncTask<String, String, String> {
 
         protected void onPreExecute() {
             super.onPreExecute();
@@ -79,7 +112,9 @@ public class MainActivity extends AppCompatActivity {
 
                 while ((line = reader.readLine()) != null)
                     buffer.append(line).append("\n");
+
                 return buffer.toString();
+
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
@@ -110,7 +145,8 @@ public class MainActivity extends AppCompatActivity {
                 Double rub = Double.parseDouble(userFieldRub.getText().toString());
 
                 Double value = jsonObject.getJSONObject("Valute").getJSONObject(currency).getDouble("Value");
-                Double resultDouble = rub * value;
+                Double nominal = jsonObject.getJSONObject("Valute").getJSONObject(currency).getDouble("Nominal");
+                Double resultDouble = (rub / value) * nominal;
 
                 resultInfo.setText("Сумма в руб: " + resultDouble + " руб.");
 

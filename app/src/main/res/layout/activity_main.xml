@@ -24,13 +24,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
         android:layout_marginHorizontal="50sp"
-        android:layout_marginTop="70sp"
+        android:layout_marginTop="20sp"
         android:backgroundTint="@color/purple_500"
         android:ems="10"
-        android:textColor="@color/textColorHint"
-        android:textColorHint="@color/textColorHint"
         android:hint="@string/hint_user_tilt"
-        android:inputType="textPersonName"/>
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/textColorHint"
+        android:textColorHint="@color/textColorHint" />
 
     <EditText
         android:id="@+id/user_field_rub"
@@ -63,8 +64,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/main_button"
         android:fontFamily="@font/montserrat_bold"
-        android:layout_marginTop="50sp"
+        android:layout_marginTop="20sp"
         android:textAlignment="center"
         android:textColor="@color/textColorHint"
         android:textSize="25sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/currency_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/result_info"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical" />
+
 </RelativeLayout>

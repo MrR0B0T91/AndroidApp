@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="146dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/purple_500"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <TextView
+            android:id="@+id/currency_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/app_name"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="173dp"
+            tools:layout_editor_absoluteY="333dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="49dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/currency_now"
+                android:textSize="14sp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="173dp"
+                tools:layout_editor_absoluteY="333dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/currency_previous"
+                android:textSize="14sp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="173dp"
+                tools:layout_editor_absoluteY="333dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/value_now"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/currency_now"
+                android:textSize="14sp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="173dp"
+                tools:layout_editor_absoluteY="333dp" />
+
+            <TextView
+                android:id="@+id/value_previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/currency_previous"
+                android:textSize="14sp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="173dp"
+                tools:layout_editor_absoluteY="333dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
