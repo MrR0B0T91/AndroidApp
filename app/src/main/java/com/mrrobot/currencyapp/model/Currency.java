@@ -2,30 +2,30 @@ package com.mrrobot.currencyapp.model;
 
 public class Currency {
 
-    private String id;
+    private String ID;
     private String NumCode;
     private String CharCode;
-    private Integer nominal;
-    private String name;
-    private Double value;
-    private Double previous;
+    private Integer Nominal;
+    private String Name;
+    private Double Value;
+    private Double Previous;
 
-    public Currency(String id, String numCode, String charCode, Integer nominal, String name, Double value, Double previous) {
-        this.id = id;
+    public Currency(String ID, String numCode, String charCode, Integer nominal, String name, Double value, Double previous) {
+        this.ID = ID;
         NumCode = numCode;
         CharCode = charCode;
-        this.nominal = nominal;
-        this.name = name;
-        this.value = value;
-        this.previous = previous;
+        Nominal = nominal;
+        Name = name;
+        Value = value;
+        Previous = previous;
     }
 
-    public String getId() {
-        return id;
+    public String getID() {
+        return ID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getNumCode() {
@@ -45,34 +45,34 @@ public class Currency {
     }
 
     public Integer getNominal() {
-        return nominal;
+        return Nominal;
     }
 
     public void setNominal(Integer nominal) {
-        this.nominal = nominal;
+        Nominal = nominal;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 
     public Double getValue() {
-        return value;
+        return Value;
     }
 
     public void setValue(Double value) {
-        this.value = value;
+        Value = value;
     }
 
     public Double getPrevious() {
-        return previous;
+        return Previous;
     }
 
     public void setPrevious(Double previous) {
-        this.previous = previous;
+        Previous = previous;
     }
 }

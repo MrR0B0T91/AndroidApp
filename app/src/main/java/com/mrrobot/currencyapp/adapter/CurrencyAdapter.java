@@ -38,8 +38,7 @@ public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.Curren
 
         holder.currencyTitle.setText(currencies.get(position).getName());
         holder.valueNow.setText(currencies.get(position).getValue().toString());
-        holder.valuePrevious.setText(currencies.get(position).getPrevious().toString());
-
+        holder.charCode.setText(currencies.get(position).getCharCode());
     }
 
     @Override
@@ -50,14 +49,14 @@ public class CurrencyAdapter extends RecyclerView.Adapter<CurrencyAdapter.Curren
     public static final class CurrencyViewHolder extends RecyclerView.ViewHolder {
 
 
-        TextView currencyTitle, valueNow, valuePrevious;
+        TextView currencyTitle, valueNow, charCode;
 
         public CurrencyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             currencyTitle = itemView.findViewById(R.id.currency_name);
             valueNow = itemView.findViewById(R.id.value_now);
-            valuePrevious = itemView.findViewById(R.id.value_previous);
+            charCode = itemView.findViewById(R.id.char_code);
 
         }
     }
