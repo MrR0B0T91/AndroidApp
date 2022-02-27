@@ -5,9 +5,7 @@
     <string name="main_btn">Рассчитать курс</string>
     <string name="no_user_input">Введите текст</string>
     <string name="rub_input">Введите сумму в рублях</string>
-    <string name="second_btn">Обновить курс</string>
     <string name="currency_now">Текущий курс:</string>
-    <string name="currency_previous">Прошлый курс:</string>
     <string name="refresh">Обновить курс</string>
     <string name="error">Ошибка</string>
     <string name="currency_char">Код валюты:</string>

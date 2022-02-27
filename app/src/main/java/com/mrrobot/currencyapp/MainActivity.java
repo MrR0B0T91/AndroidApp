@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultInfo;
     private Button refreshButton;
     private final String URL = "https://www.cbr-xml-daily.ru/daily_json.js";
-    private List<Currency> currencies = new ArrayList<>();
+    private final List<Currency> currencies = new ArrayList<>();
 
     private RecyclerView recyclerView;
     private CurrencyAdapter currencyAdapter;
